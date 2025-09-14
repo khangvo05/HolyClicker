@@ -1,7 +1,7 @@
 # Holy Clicker 
 
 
-A simple, intuitive yet extensive auto-click and auto-type SCRIPT WRITING application for automating your boring tasks.
+A simple, intuitive yet extensive auto-click and auto-type script writing application for automating your boring tasks.
 
 Written with Python and pyautogui.
 
