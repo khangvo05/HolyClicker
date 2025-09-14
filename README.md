@@ -8,7 +8,7 @@ Written with Python and pyautogui.
 
 ## ✨ Features
 
-- **Choose a number of clicks to perform at a specific coordinate**
+- **Choose a number of clicks to perform at a specific coordinate (Basic Auto click)**
 - **Instantly copy the coordinate of your cursor with one press of button.**
 - **Simple, human-intuitive scripting system to customize your desired clicking routine. Those commands offer the following utilities:**
 
