@@ -14,5 +14,5 @@ class HolyClicker:
         scripting.Scripting()
         tutorial_and_screenshot.TutorialAndScreenshot()
 
-HolyClick()
+HolyClicker()
 root.mainloop()
