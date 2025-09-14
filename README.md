@@ -22,8 +22,8 @@ Written with Python and pyautogui.
     - Drag mouse to a specific coordinate.
     - Randomly execute commands with customized probability distribution.
     - Randomly type texts taken from a file.
-    - Checking for an image's appearance on the screen to execute commands.
-    - Repeat a section of commands
+    - Checking for an image's appearance on the screen to execute commands. This command can be run in parallel fashion.
+    - Repeat a section of commands.
 
 ## 🛠️ Installation
 
