@@ -42,6 +42,7 @@ class SimpleAutoClicking:
             coordinate[0] = int(coordinate[0])
             coordinate[1] = int(coordinate[1])
             pg.moveTo(coordinate[0],coordinate[1])
+            interval = float(self.autoclick_interval_entry.get())
             count = 0
             self.flag_stop = threading.Event()
             check_stop = threading.Thread(target=self.stop_clicking,daemon=True,args=[interval])
