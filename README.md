@@ -1,4 +1,4 @@
-# Holy Clicker 
+# HolyClicker 
 
 
 A simple, intuitive yet extensive auto-click and auto-type script writing application for automating your boring tasks.

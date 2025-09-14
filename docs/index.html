@@ -206,7 +206,19 @@
             font-family: 'Fira Code', monospace;
             border-left: 4px solid var(--accent);
         }
+    .github-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    transition: var(--transition);
+    }
 
+.github-link:hover {
+    color: var(--success);
+    transform: scale(1.1);
+}
         .param {
             color: #a6e22e;
         }
@@ -324,8 +336,11 @@
 <body>
     <header>
         <div class="container">
-            <h1>Holy Clicker</h1>
-            <p class="subtitle">Guide to use the auto typing and auto clicking script writing app Holy Clicker with detailed command usages and examples.</p>
+            <a href="https://github.com/khangvo05/HolyClick" target="_blank" class="github-link">
+    <i class="fab fa-github"></i>
+</a>
+            <h1>HolyClicker</h1>
+            <p class="subtitle">Simple, intuitive yet extensive Auto-type and Auto-click script writing app.</p>
         </div>
         <img src="https://i.postimg.cc/1zXX56VV/image.png" alt="Holy Clicker Logo" class="logo">
     </header>
@@ -334,7 +349,7 @@
         <section class="download-section">
             <h2><i class="fas fa-download"></i> Get Started</h2>
             <p>Download the latest version and start automating your tasks today</p>
-            <a href="https://github.com/khangvo05/HolyClick/releases/latest/download/HolyClicker.exe" class="btn btn-large">
+            <a href="https://github.com/khangvo05/HolyClick/releases/latest/download/HolyClicker.rar" class="btn btn-large">
                 <i class="fas fa-download"></i> Download Now
             </a>
         </section>
@@ -563,10 +578,37 @@
                 </div>
             </div>
         </section>
-
+            <section id="author">
+            <h2></h2>
+            <p>If you have questions, feedback, or just want to connect, feel free to reach out:DDDDDDD</p>
+            
+            <div class="command-grid">
+                <div class="command-card">
+                    <div class="command-title"><i class="fab fa-facebook"></i> Facebook</div>
+                    <div class="command-desc">
+                        <a href="https://facebook.com/kann99999" target="_blank">https://facebook.com/kann99999</a>
+                    </div>
+                </div>
+                
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-envelope"></i> Gmail</div>
+                    <div class="command-desc">
+                        <a href="mailto:voankhangpt@gmail.com">voankhangpt@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-phone"></i> Phone</div>
+                    <div class="command-desc">
+                        <a href="tel:+84966497517">+84 966 497 517</a>
+                    </div>
+                </div>
+            </div>
+        </section>
         <footer>
             <p>&copy; 2025 Holy Clicker. All rights reserved.</p>
         </footer>
     </div>
+    
 </body>
 </html>
