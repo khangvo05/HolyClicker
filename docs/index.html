@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyClicker Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --code-bg: #2b2d42;
+            --border-radius: 10px;
+            --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, transparent 30%, rgba(255, 255, 255, 0.1) 70%);
+            transform: rotate(30deg);
+        }
+
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-large {
+            font-size: 1.3rem;
+            padding: 1.2rem 2.5rem;
+        }
+
+        section {
+            background: white;
+            margin: 3rem 0;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.8rem;
+            color: var(--primary-dark);
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 0.8rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin: 2rem 0 1.2rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .command {
+            background: var(--code-bg);
+            color: #f8f8f2;
+            padding: 1.8rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            border-left: 4px solid var(--accent);
+        }
+
+        .github-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .github-link:hover {
+            color: var(--success);
+            transform: scale(1.1);
+        }
+
+        .param { color: #a6e22e; }
+        .comment { color: #75715e; }
+
+        .command-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .command-card {
+            background: #f9f9ff;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e6e6ff;
+            transition: var(--transition);
+        }
+
+        .command-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .command-title {
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .command-title i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+
+        .command-desc {
+            color: #325688;
+            margin-bottom: 1rem;
+        }
+        
+        .desc-list {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+        .desc-list li {
+            margin-bottom: 0.5rem;
+            list-style-type: disc;
+        }
+        .desc-note {
+            font-size: 0.9em;
+            color: #666;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .note {
+            background: #fff9e6;
+            border-left: 4px solid #ffcc00;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .tip {
+            background: #e6f7ff;
+            border-left: 4px solid #0099ff;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .important-block {
+            border: 2px dashed var(--accent);
+            background-color: #fff0f6;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="https://github.com/khangvo05/HolyClick" target="_blank" class="github-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <h1>HolyClicker</h1>
+            <p class="subtitle">Simple, intuitive yet extensive Auto-type and Auto-click script writing app.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="download-section">
+            <h2><i class="fas fa-download"></i> Get Started</h2>
+            <p>Download the latest version and start automating your tasks today</p>
+            <a href="https://github.com/khangvo05/HolyClick/releases/latest/download/HolyClicker.rar" class="btn btn-large">
+                <i class="fas fa-download"></i> Download Now
+            </a>
+        </section>
+
+        <section id="how-to-use">
+            <h2><i class="fas fa-play-circle"></i> How to Use</h2>
+            <p>After opening the scripting window, click <strong>ADD</strong> or press <strong>ENTER</strong> to add new entries. Each entry only contains one command. Your script will be executed sequentially.</p>
+            <div class="tip">
+                <p><i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Plan your workflow before creating the script to ensure optimal sequence of commands.</p>
+            </div>
+        </section>
+
+        <section id="importing">
+            <h2><i class="fas fa-file-import"></i> Importing Scripts</h2>
+            <p>To import your own scripts, the JSON file must follow this format:</p>
+            <div class="command">
+                [<br>
+                &nbsp;&nbsp;{"id" : <span class="param">INTEGER</span>, "name" : <span class="param">STRING</span>, "command" : <span class="param">LIST</span>},<br>
+                &nbsp;&nbsp;...<br>
+                ]
+            </div>
+        </section>
+
+        <section id="commands">
+            <h2><i class="fas fa-terminal"></i> Basic Commands</h2>
+            <div class="command-grid">
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-comment"></i> Comments</div>
+                    <div class="command-desc">Use double slash for comments.</div>
+                    <div class="command"><span class="comment">// This is a comment</span></div>
+                </div>
+                
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-mouse-pointer"></i> cX,Y</div>
+                    <div class="command-desc">Click at coordinate X, Y. Optional T for times.</div>
+                    <div class="command">click<span class="param">100</span>,<span class="param">200</span>,<span class="param">2</span></div>
+                </div>
+                
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-image"></i> cIMG.PNG...</div>
+                    <div class="command-desc">Find and click image. REGION (x1,y1,x2,y2) is optional.</div>
+                    <div class="command">click<span class="param">btn.png</span>,<span class="param">(0,0,500,500)</span></div>
+                    <div class="note">
+                        <p><i class="fas fa-folder-open"></i> <strong>Note:</strong> The image file must be located in the same folder as the HolyClicker executable.</p>
+                    </div>
+                </div>
+                
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-hourglass-half"></i> waitTIME</div>
+                    <div class="command-desc">Wait for specified seconds.</div>
+                    <div class="command">wait<span class="param">0.5</span></div>
+                </div>
+                
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-clock"></i> waituntilTIME</div>
+                    <div class="command-desc">Wait until specific time (HH:MM:SS).</div>
+                    <div class="command">waituntil<span class="param">14:30:00</span></div>
+                </div>
+                
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-keyboard"></i> typeTEXT</div>
+                    <div class="command-desc">Type the specified text.</div>
+                    <div class="command">type<span class="param">Hello World</span></div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-file-alt"></i> typerandomFILE,DEL</div>
+                    <div class="command-desc">Type random line from file. Set DEL to true to delete line after typing.</div>
+                    <div class="command">typerandom<span class="param">data.txt</span>,<span class="param">true</span></div>
+                </div>
+                
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-key"></i> pressKEY</div>
+                    <div class="command-desc">Press a single key (e.g., enter, f5, esc).</div>
+                    <div class="command">press<span class="param">enter</span></div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-arrow-down"></i> pressdownKEY</div>
+                    <div class="command-desc">Press and hold a key.</div>
+                    <div class="command">pressdown<span class="param">shift</span></div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-arrow-up"></i> releaseKEY</div>
+                    <div class="command-desc">Release a held key.</div>
+                    <div class="command">release<span class="param">shift</span></div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-arrows-alt"></i> dragToX,Y,BTN,T</div>
+                    <div class="command-desc">Drag mouse to X,Y using BTN (left/right) over T seconds.</div>
+                    <div class="command">dragTo<span class="param">500</span>,<span class="param">500</span>,<span class="param">left</span>,<span class="param">1.5</span></div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-hand-point-down"></i> mousedownX,Y,BTN</div>
+                    <div class="command-desc">Hold mouse button at X,Y.</div>
+                    <div class="command">mousedown<span class="param">100</span>,<span class="param">100</span>,<span class="param">left</span></div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-hand-point-up"></i> mouseupX,Y,BTN</div>
+                    <div class="command-desc">Release mouse button at X,Y.</div>
+                    <div class="command">mouseup<span class="param">100</span>,<span class="param">100</span>,<span class="param">left</span></div>
+                </div>
+            </div>
+            
+            <h3>Nested Commands</h3>
+            <div class="important-block">
+                <strong><i class="fas fa-exclamation-triangle"></i> IMPORTANT SYNTAX RULE</strong><br>
+                All advanced commands below MUST be followed immediately by a <code>begin</code> entry and closed with an <code>end</code> entry.
+            </div>
+
+            <div class="command-grid">
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-redo"></i> repeatN:</div>
+                    <div class="command-desc">Execute the block N times.</div>
+                    <div class="command">
+                        repeat<span class="param">5</span>:<br>
+                        begin<br>
+                        &nbsp;&nbsp;click<span class="param">100</span>,<span class="param">100</span><br>
+                        &nbsp;&nbsp;wait<span class="param">1</span><br>
+                        end
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-eye"></i> untilCONDITION</div>
+                    <div class="command-desc">
+                        Repeat the block of code until a condition is met.
+                        <ul class="desc-list">
+                            <li>
+                                <code>untilIMG.png</code>
+                                <span class="desc-note">Repeats until IMG.png appears on the screen.</span>
+                            </li>
+                            <li>
+                                <code>untilHH:MM:SS</code>
+                                <span class="desc-note">Repeats until the clock hits HH:MM:SS.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="command">
+                        until<span class="param">login_btn.png</span><br>
+                        begin<br>
+                        &nbsp;&nbsp;wait<span class="param">1</span><br>
+                        &nbsp;&nbsp;press<span class="param">f5</span><br>
+                        end
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-crosshairs"></i> ifX,Y</div>
+                    <div class="command-desc">Execute block ONLY IF mouse cursor is near (within 10px) of X,Y.</div>
+                    <div class="command">
+                        if<span class="param">500</span>,<span class="param">500</span><br>
+                        begin<br>
+                        &nbsp;&nbsp;type<span class="param">Mouse is here!</span><br>
+                        end
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-dice"></i> randomDISTRIBUTION</div>
+                    <div class="command-desc">
+                        Randomly execute ONE command/block from inside the begin/end block.
+                        <ul class="desc-list">
+                            <li><code>randomUNIFORM</code> <span class="desc-note">Equal chance for all commands.</span></li>
+                            <li><code>random0.7,0.3</code> <span class="desc-note">Custom probabilities.</span></li>
+                        </ul>
+                    </div>
+                    <div class="command">
+                        random<span class="param">UNIFORM</span><br>
+                        begin<br>
+                        &nbsp;&nbsp;click<span class="param">100</span>,<span class="param">100</span><br>
+                        &nbsp;&nbsp;click<span class="param">200</span>,<span class="param">200</span><br>
+                        end
+                    </div>
+                    <div class="note">
+                        <p><i class="fas fa-exclamation-circle"></i> <strong>Warning for custom probabilities:</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>The sum of all probabilities must equal exactly <strong>1</strong>.</li>
+                            <li>The number of distributions must equal the number of commands in the block.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="author">
+            <h2>Contact</h2>
+            <div class="command-grid">
+                <div class="command-card">
+                    <div class="command-title"><i class="fab fa-facebook"></i> Facebook</div>
+                    <div class="command-desc">
+                        <a href="https://facebook.com/kann99999" target="_blank">kann99999</a>
+                    </div>
+                </div>
+                
+                <div class="command-card">
+                    <div class="command-title"><i class="fas fa-envelope"></i> Gmail</div>
+                    <div class="command-desc">
+                        <a href="mailto:voankhangpt@gmail.com">voankhangpt@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Holy Clicker. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
