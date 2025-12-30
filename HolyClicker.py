@@ -8,7 +8,6 @@ import components.tutorial_and_screenshot as tutorial_and_screenshot
 #Author: Vo An Khang
 class HolyClicker:
     def __init__(self):
-        #Built-in screenshot taker for image handling
         coordinate.Coordinate()
         simple_auto_clicking.SimpleAutoClicking()
         scripting.Scripting()

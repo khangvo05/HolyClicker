@@ -37,7 +37,7 @@ class Scripting(DataHandling):
             stop_button = json.load(f)[0]["stop"]
         keyboard.add_hotkey('{}'.format(stop_button.upper()), self.stop_execution)
     def new_editor(self, load_entry=None):
-        """Opens a new Editor window."""
+        #New Editor Window
         editor_window = Editor()
         
         # RE-BIND BUTTONS: Override Editor's default buttons with Scripting logic
