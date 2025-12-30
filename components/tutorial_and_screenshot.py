@@ -2,11 +2,18 @@ import subprocess
 import tkinter as tk
 import pyautogui as pg
 import pyscreenshot
+<<<<<<< HEAD
+import webbrowser
+=======
+>>>>>>> 358525b105fd275ed0745680f6162683843288f4
 from tkinter import scrolledtext
 import components.main_window as r
 from tkinter import messagebox
 from tkinter import ttk
 
+<<<<<<< HEAD
+                    
+=======
 
 HEADING_LIST = ["How to use","Importing","Interval between each command","//","clickX,Y","clickX,Y,T","clickIMG.PNG,COLOR,REGION","waitTIME","waituntilTIME","typeTEXT","pressBUTTON","clickdownBUTTON","releaseBUTTON","mousedownX,Y,OPTION","mouseupX,Y,OPTION","dragToX,Y,OPTION,t","listenIMG.PNG,S,INTERVAL,N,TIME,COLOR,REGION","randomcommandN,UNIFORM","randomcommandN,P1,...,PN","randomtypeFILE.*,DELETE","repeatN:"]
 DESCRIPTION_LIST = ['''After open the scripting window, click ADD to add new entries. Each entry only contains one command. Your script will be executed sequentially.
@@ -59,21 +66,32 @@ end
 click200,200
 ...'''
                     ]
+>>>>>>> 358525b105fd275ed0745680f6162683843288f4
 class TutorialAndScreenshot:
     def __init__(self):
         self.tutorial_window = None
         self.button_frame = ttk.Frame(r.root,padding=10,height=20)
         self.button_frame.pack(side="left",fill="x",pady=(0,10))
         self.screenshot_button = tk.Button(self.button_frame,text = "TAKE SCREENSHOT",font="Arial,8",command=self.screenshot_window_func)
+<<<<<<< HEAD
+        self.screenshot_button.pack(side="left",fill="x")
+        self.tutorial_button = tk.Button(self.button_frame,text = "TUTORIAL", font="Arial,8",command=self.tutorial)
+        self.tutorial_button.pack(side="left",fill="x")
+=======
         self.screenshot_button.pack(side="left",padx=(0,15))
         self.tutorial_button = tk.Button(self.button_frame,text = "TUTORIAL", font=("Arial",12),command=self.tutorial)
         self.tutorial_button.pack(side="right")
+>>>>>>> 358525b105fd275ed0745680f6162683843288f4
     def screenshot_window_func(self):
         try:
             subprocess.Popen("SnippingTool.exe")
         except Exception:
             messagebox.showerror("ERROR","Can not find SnippingTool.exe,please take screenshot manually!")
     def tutorial(self):
+<<<<<<< HEAD
+        webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1")
+        
+=======
         self.tutorial_window = tk.Toplevel(r.root)
         self.tutorial_window.title("Tutorial")
         self.tutorial_window.geometry("700x650")
@@ -101,6 +119,7 @@ class TutorialAndScreenshot:
         style_configure()
         textarea.configure(state="disabled")
         textarea.pack(fill="both", expand=True)
+>>>>>>> 358525b105fd275ed0745680f6162683843288f4
 
 
 
