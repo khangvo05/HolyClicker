@@ -26,7 +26,7 @@ Written with Python and pyautogui.
     - IF statement
 
 - **For specific syntax, please visit:**
-      [Documentation](khangvo05.github.io/HolyClicker/)
+      markdownhttps://khangvo05.github.io/HolyClicker/
 
 ## 🛠️ Installation
 
