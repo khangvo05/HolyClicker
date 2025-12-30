@@ -10,9 +10,8 @@ Written with Python and pyautogui.
 
 - **Choose a number of clicks to perform at a specific coordinate (Basic Auto click)**
 - **Instantly copy the coordinate of your cursor with one press of button.**
-- **Simple, human-intuitive scripting system to customize your desired clicking routine. Those commands offer the following utilities:**
-
-    - Click at a coordinate.
+- **Simple, intuitive scripting system to customize your desired clicking routine. Those commands offer the following utilities:**
+  
     - Click at an image on the screen.
     - Type text.
     - Press down and release button.
@@ -26,7 +25,8 @@ Written with Python and pyautogui.
     - Repeat commands until condition is met.
     - IF statement
 
-     For specific syntax, please visit: khangvo05.github.io/HolyClicker/
+- **For specific syntax, please visit:**
+      [](khangvo05.github.io/HolyClicker/)
 
 ## 🛠️ Installation
 
