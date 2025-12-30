@@ -17,7 +17,6 @@ class HolyClicker:
     def __init__(self):
 <<<<<<< HEAD
 =======
-        #Built-in screenshot taker for image handling
 >>>>>>> 358525b105fd275ed0745680f6162683843288f4
         coordinate.Coordinate()
         simple_auto_clicking.SimpleAutoClicking()
