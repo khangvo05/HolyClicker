@@ -25,9 +25,8 @@ Written with Python and pyautogui.
     - Repeat commands until condition is met.
     - IF statement
 
-- **For specific syntax, please visit:**
-      markdownhttps://khangvo05.github.io/HolyClicker/
-
+- **For specific syntax and tutorial, please visit my page**
+  https://khangvo05.github.io/HolyClicker/
 ## 🛠️ Installation
 
 Download the latest version on the release page, unzip and run.
